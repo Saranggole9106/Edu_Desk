@@ -15,6 +15,10 @@ from src.routes.websocket import socketio
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'static'))
 app.config['SECRET_KEY'] = 'asdf#FGSgvasgf$5$WGT'
 
+# Set session cookie settings for cross-site authentication
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+app.config['SESSION_COOKIE_SECURE'] = True
+
 # Enable CORS for all routes
 CORS(app, supports_credentials=True)
 
@@ -27,8 +31,7 @@ app.register_blueprint(tickets_bp, url_prefix='/api/tickets')
 app.register_blueprint(faq_bp, url_prefix='/api/faq')
 
 # uncomment if you need to use database
-# app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(os.path.dirname(__file__), 'database', 'app.db')}"
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgresql://edusdesk_user:kSnXJ3bx96K7OsU6uuux2guOIzbj7gyQ@dpg-d1qhifruibrs73eo3b90-a.oregon-postgres.render.com/edusdesk')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 with app.app_context():
