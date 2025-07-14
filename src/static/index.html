@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduDesk - Student Helpdesk System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduDesk</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="#tickets" class="nav-link" data-section="tickets">
+                    <i class="fas fa-ticket-alt"></i> My Tickets
+                </a>
+                <a href="#create-ticket" class="nav-link" data-section="create-ticket">
+                    <i class="fas fa-plus-circle"></i> Create Ticket
+                </a>
+                <a href="#faq" class="nav-link" data-section="faq">
+                    <i class="fas fa-question-circle"></i> FAQ
+                </a>
+                <div class="nav-user" id="navUser" style="display: none;">
+                    <div class="user-info">
+                        <span class="user-name" id="userName"></span>
+                        <span class="user-role" id="userRole"></span>
+                    </div>
+                    <button class="logout-btn" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Login Section -->
+        <section id="login-section" class="auth-section">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>Welcome to EduDesk</h2>
+                        <p>Your Student Helpdesk System</p>
+                    </div>
+                    <div class="auth-tabs">
+                        <button class="tab-btn active" data-tab="login">Login</button>
+                        <button class="tab-btn" data-tab="register">Register</button>
+                    </div>
+                    
+                    <!-- Login Form -->
+                    <form id="loginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="loginUsername">Username or Email</label>
+                            <input type="text" id="loginUsername" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                    
+                    <!-- Register Form -->
+                    <form id="registerForm" class="auth-form" style="display: none;">
+                        <div class="form-group">
+                            <label for="regUsername">Username</label>
+                            <input type="text" id="regUsername" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regEmail">Email</label>
+                            <input type="email" id="regEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regFullName">Full Name</label>
+                            <input type="text" id="regFullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regRole">Role</label>
+                            <select id="regRole" required>
+                                <option value="">Select Role</option>
+                                <option value="student">Student</option>
+                                <option value="staff">Staff</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="studentIdGroup" style="display: none;">
+                            <label for="regStudentId">Student ID</label>
+                            <input type="text" id="regStudentId">
+                        </div>
+                        <div class="form-group" id="departmentGroup" style="display: none;">
+                            <label for="regDepartment">Department</label>
+                            <select id="regDepartment">
+                                <option value="">Select Department</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="regPassword">Password</label>
+                            <input type="password" id="regPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="content-section" style="display: none;">
+            <div class="section-header">
+                <h2>Dashboard</h2>
+                <p>Welcome back! Here's your overview.</p>
+            </div>
+            
+            <div class="stats-grid" id="statsGrid">
+                <!-- Stats cards will be populated by JavaScript -->
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="recent-tickets">
+                    <h3>Recent Tickets</h3>
+                    <div class="tickets-list" id="recentTicketsList">
+                        <!-- Recent tickets will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Tickets Section -->
+        <section id="tickets-section" class="content-section" style="display: none;">
+            <div class="section-header">
+                <h2>My Tickets</h2>
+                <div class="section-actions">
+                    <div class="filter-group">
+                        <select id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="open">Open</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="resolved">Resolved</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tickets-container">
+                <div class="tickets-list" id="ticketsList">
+                    <!-- Tickets will be populated by JavaScript -->
+                </div>
+                <div class="pagination" id="ticketsPagination">
+                    <!-- Pagination will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Create Ticket Section -->
+        <section id="create-ticket-section" class="content-section" style="display: none;">
+            <div class="section-header">
+                <h2>Create New Ticket</h2>
+                <p>Describe your issue and we'll help you resolve it.</p>
+            </div>
+            
+            <form id="createTicketForm" class="ticket-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ticketTitle">Title</label>
+                        <input type="text" id="ticketTitle" required placeholder="Brief description of your issue">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ticketCategory">Category</label>
+                        <select id="ticketCategory" required>
+                            <option value="">Select Category</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ticketDepartment">Department</label>
+                        <select id="ticketDepartment" required>
+                            <option value="">Select Department</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ticketPriority">Priority</label>
+                        <select id="ticketPriority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                            <option value="urgent">Urgent</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ticketDescription">Description</label>
+                    <textarea id="ticketDescription" required rows="6" placeholder="Please provide detailed information about your issue..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Submit Ticket
+                </button>
+            </form>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq-section" class="content-section" style="display: none;">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-search">
+                    <input type="text" id="faqSearch" placeholder="Search FAQs...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            
+            <div class="faq-categories" id="faqCategories">
+                <!-- FAQ categories will be populated by JavaScript -->
+            </div>
+            
+            <div class="faq-list" id="faqList">
+                <!-- FAQs will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Ticket Detail Modal -->
+        <div id="ticketModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTicketTitle"></h3>
+                    <span class="close" id="closeModal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="ticket-info" id="ticketInfo">
+                        <!-- Ticket details will be populated by JavaScript -->
+                    </div>
+                    <div class="ticket-responses" id="ticketResponses">
+                        <!-- Responses will be populated by JavaScript -->
+                    </div>
+                    <div class="response-form" id="responseForm">
+                        <!-- Response form will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
