@@ -31,7 +31,10 @@ app.register_blueprint(tickets_bp, url_prefix='/api/tickets')
 app.register_blueprint(faq_bp, url_prefix='/api/faq')
 
 # uncomment if you need to use database
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+db_url = os.environ.get('DATABASE_URL')
+if not db_url:
+    raise RuntimeError("DATABASE_URL environment variable not set!")
+app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 with app.app_context():
