@@ -1067,3 +1067,4 @@ Through careful attention to security, performance, and usability, EduDesk provi
 
 The system's extensible architecture allows for future enhancements and customizations, making it suitable for institutions of various sizes and requirements. Whether deployed as a departmental solution or institution-wide system, EduDesk provides the foundation for excellent student support services.
 
+# Edu_Desk
