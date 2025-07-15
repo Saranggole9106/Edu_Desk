@@ -6,17 +6,12 @@ def send_whatsapp_message(to, body):
         key=os.environ['VONAGE_API_KEY'],
         secret=os.environ['VONAGE_API_SECRET']
     )
-    response = client.post(
-        'https://api.nexmo.com/v0.1/messages',
-        {
-            "from": {"type": "whatsapp", "number": os.environ['VONAGE_WHATSAPP_NUMBER']},
-            "to": {"type": "whatsapp", "number": to},
-            "message": {
-                "content": {
-                    "type": "text",
-                    "text": body
-                }
-            }
-        }
-    )
+    messages = vonage.Messages(client)
+    response = messages.send_message({
+        "channel": "whatsapp",
+        "message_type": "text",
+        "to": to,
+        "from": os.environ['VONAGE_WHATSAPP_NUMBER'],
+        "text": body,
+    })
     return response 
