@@ -1,4 +1,4 @@
-// Global variables
+// Global variabless
 let currentUser = null;
 let currentSection = 'dashboard';
 let currentPage = 1;
