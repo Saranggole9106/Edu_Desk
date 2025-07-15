@@ -1,4 +1,4 @@
-// Global variabless
+// Global variables
 let currentUser = null;
 let currentSection = 'dashboard';
 let currentPage = 1;
@@ -12,6 +12,30 @@ const API_BASE = '/api';
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
+    const whatsappBtn = document.getElementById('whatsapp-float-btn');
+    const whatsappSection = document.getElementById('whatsapp-section');
+    const closeWhatsapp = document.getElementById('closeWhatsappSection');
+
+    if (whatsappBtn && whatsappSection && closeWhatsapp) {
+        whatsappBtn.addEventListener('click', function() {
+            whatsappSection.style.display = 'block';
+        });
+
+        closeWhatsapp.addEventListener('click', function() {
+            whatsappSection.style.display = 'none';
+        });
+
+        // Optional: Hide popup if clicked outside
+        window.addEventListener('click', function(e) {
+            if (
+                whatsappSection.style.display === 'block' &&
+                !whatsappSection.contains(e.target) &&
+                !whatsappBtn.contains(e.target)
+            ) {
+                whatsappSection.style.display = 'none';
+            }
+        });
+    }
 });
 
 function initializeApp() {
