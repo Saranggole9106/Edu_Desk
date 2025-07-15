@@ -11,6 +11,7 @@ from src.routes.auth import auth_bp
 from src.routes.tickets import tickets_bp
 from src.routes.faq import faq_bp
 from src.routes.websocket import socketio
+from src.routes.whatsapp import whatsapp_bp
 
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'static'))
 app.config['SECRET_KEY'] = 'asdf#FGSgvasgf$5$WGT'
@@ -29,6 +30,7 @@ app.register_blueprint(user_bp, url_prefix='/api')
 app.register_blueprint(auth_bp, url_prefix='/api/auth')
 app.register_blueprint(tickets_bp, url_prefix='/api/tickets')
 app.register_blueprint(faq_bp, url_prefix='/api/faq')
+app.register_blueprint(whatsapp_bp, url_prefix='/api/whatsapp')
 
 # uncomment if you need to use database
 db_url = os.environ.get("DATABASE_URL")
