@@ -1331,3 +1331,43 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     color: var(--bright-orange);
     text-shadow: 0 0 6px rgba(255,165,0,0.12);
 }
+
+/* WhatsApp Floating Button */
+#whatsapp-float-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    cursor: pointer;
+    background: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    padding: 10px;
+    transition: box-shadow 0.2s;
+}
+#whatsapp-float-btn:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+/* WhatsApp Popup Section */
+#whatsapp-section {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 1001;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+    padding: 24px 20px 16px 20px;
+    min-width: 320px;
+    max-width: 90vw;
+}
+#whatsapp-section .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+}
