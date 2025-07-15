@@ -47,13 +47,15 @@ def insert_test_data():
     if not Department.query.first():
         cs = Department(name="Computer Science", is_active=True)
         math = Department(name="Mathematics", is_active=True)
-        db.session.add(cs)
-        db.session.add(math)
+        physics = Department(name="Physics", is_active=True)
+        chemistry = Department(name="Chemistry", is_active=True)
+        db.session.add_all([cs, math, physics, chemistry])
     if not TicketCategory.query.first():
         exam = TicketCategory(name="Exam", is_active=True)
         fees = TicketCategory(name="Fees", is_active=True)
-        db.session.add(exam)
-        db.session.add(fees)
+        hostel = TicketCategory(name="Hostel", is_active=True)
+        library = TicketCategory(name="Library", is_active=True)
+        db.session.add_all([exam, fees, hostel, library])
     db.session.commit()
     print("Test departments and categories added!")
 
