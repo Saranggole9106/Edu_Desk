@@ -43,19 +43,19 @@ with app.app_context():
 # Add this near the top of src/main.py
 def insert_test_data():
     from src.models.user import db, Department, TicketCategory
-    # Only run if there are no departments or categories
-    if not Department.query.first():
-        cs = Department(name="Computer Science", is_active=True)
-        math = Department(name="Mathematics", is_active=True)
-        physics = Department(name="Physics", is_active=True)
-        chemistry = Department(name="Chemistry", is_active=True)
-        db.session.add_all([cs, math, physics, chemistry])
-    if not TicketCategory.query.first():
-        exam = TicketCategory(name="Exam", is_active=True)
-        fees = TicketCategory(name="Fees", is_active=True)
-        hostel = TicketCategory(name="Hostel", is_active=True)
-        library = TicketCategory(name="Library", is_active=True)
-        db.session.add_all([exam, fees, hostel, library])
+
+    # Departments to add
+    departments = ["Computer Science", "Mathematics", "Physics", "Chemistry"]
+    for dept_name in departments:
+        if not Department.query.filter_by(name=dept_name).first():
+            db.session.add(Department(name=dept_name, is_active=True))
+
+    # Categories to add
+    categories = ["Exam", "Fees", "Hostel", "Library"]
+    for cat_name in categories:
+        if not TicketCategory.query.filter_by(name=cat_name).first():
+            db.session.add(TicketCategory(name=cat_name, is_active=True))
+
     db.session.commit()
     print("Test departments and categories added!")
 
