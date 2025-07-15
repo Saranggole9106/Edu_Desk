@@ -1265,3 +1265,69 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
         opacity: 0;
     }
 }
+
+/* WhatsApp Trigger Form Styles */
+#whatsapp-trigger {
+    background: linear-gradient(135deg, var(--electric-purple-dark) 0%, var(--neon-pink) 100%);
+    color: var(--text-light);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(160, 32, 240, 0.15);
+    padding: 32px 24px 24px 24px;
+    margin: 32px auto 0 auto;
+    max-width: 400px;
+    text-align: center;
+    transition: box-shadow var(--transition-speed) var(--transition-easing);
+}
+#whatsapp-trigger h3 {
+    margin-bottom: 18px;
+    color: var(--cyan-aqua);
+    text-shadow: 0 0 8px rgba(0,255,213,0.3);
+}
+#whatsappForm label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: var(--lime-green);
+    text-align: left;
+}
+#whatsappForm input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--darker-bg);
+    color: var(--text-light);
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0,255,213,0.08);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+#whatsappForm input[type="text"]:focus {
+    background: var(--dark-bg);
+    outline: 2px solid var(--cyan-aqua);
+    box-shadow: 0 0 0 2px var(--cyan-aqua);
+}
+#whatsappForm button[type="submit"] {
+    background: var(--lime-green-dark);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(163,255,0,0.15);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+#whatsappForm button[type="submit"]:hover {
+    background: var(--neon-pink);
+    color: var(--text-light);
+    box-shadow: 0 4px 16px rgba(255,45,170,0.18);
+}
+#whatsappResult {
+    margin-top: 16px;
+    font-size: 1rem;
+    min-height: 24px;
+    color: var(--bright-orange);
+    text-shadow: 0 0 6px rgba(255,165,0,0.12);
+}
