@@ -31,10 +31,10 @@ app.register_blueprint(tickets_bp, url_prefix='/api/tickets')
 app.register_blueprint(faq_bp, url_prefix='/api/faq')
 
 # uncomment if you need to use database
-db_url = os.environ.get('postgresql://edusdesk_user:kSnXJ3bx96K7OsU6uuux2guOIzbj7gyQ@dpg-d1qhifruibrs73eo3b90-a.oregon-postgres.render.com/edusdesk ')
+db_url = os.environ.get("DATABASE_URL")
 if not db_url:
     raise RuntimeError("DATABASE_URL environment variable not set!")
-app.config['postgresql://edusdesk_user:kSnXJ3bx96K7OsU6uuux2guOIzbj7gyQ@dpg-d1qhifruibrs73eo3b90-a.oregon-postgres.render.com/edusdesk '] = db_url
+app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 with app.app_context():
