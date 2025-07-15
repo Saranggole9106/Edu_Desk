@@ -1142,3 +1142,32 @@ closeModal = function() {
     originalCloseModal();
 };
 
+document.addEventListener('DOMContentLoaded', function () {
+  const whatsappForm = document.getElementById('whatsappForm');
+  if (whatsappForm) {
+    whatsappForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const to = document.getElementById('to').value;
+      const body = document.getElementById('body').value;
+      const resultDiv = document.getElementById('whatsappResult');
+      resultDiv.textContent = 'Sending...';
+
+      try {
+        const response = await fetch('/api/whatsapp/send_whatsapp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ to, body })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          resultDiv.textContent = 'Message sent! Check your WhatsApp.';
+        } else {
+          resultDiv.textContent = 'Error: ' + (data.error || 'Unknown error');
+        }
+      } catch (err) {
+        resultDiv.textContent = 'Error: ' + err.message;
+      }
+    });
+  }
+});
+
