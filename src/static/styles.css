@@ -6,18 +6,11 @@
 }
 
 :root {
-    --neon-pink: #FF2DAA;
-    --neon-pink-dark: #FF007F;
-    --bright-orange: #FFA500;
-    --bright-orange-dark: #FF6F00;
-    --electric-purple: #A020F0;
-    --electric-purple-dark: #8000FF;
-    --cyan-aqua: #00FFD5;
-    --cyan-aqua-dark: #00D4FF;
-    --lime-green: #A3FF00;
-    --lime-green-dark: #00FF84;
-    --dark-bg: #121212;
-    --darker-bg: #0a0a0a;
+    --primary-blue: #003049;
+    --primary-red: #d62828;
+    --primary-orange: #f77f00;
+    --primary-yellow: #fcbf49;
+    --primary-beige: #eae2b7;
     --text-light: #f8f9fa;
     --text-dark: #333;
     --text-muted: #666;
@@ -29,7 +22,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: var(--dark-bg);
+    background-color: var(--primary-blue);
     transition: background-color var(--transition-speed) var(--transition-easing);
 }
 
@@ -40,7 +33,7 @@ html {
 
 /* Navigation */
 .navbar {
-    background: linear-gradient(135deg, var(--electric-purple) 0%, var(--electric-purple-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
     color: var(--text-light);
     padding: 0;
     position: fixed;
@@ -79,7 +72,7 @@ html {
 
 .nav-brand i {
     font-size: 1.8rem;
-    color: var(--cyan-aqua);
+    color: var(--primary-beige);
     text-shadow: 0 0 8px rgba(0, 255, 213, 0.7);
 }
 
@@ -109,7 +102,7 @@ html {
     left: 0;
     width: 0;
     height: 3px;
-    background: var(--cyan-aqua);
+    background: var(--primary-beige);
     transition: width var(--transition-speed) var(--transition-easing);
 }
 
@@ -156,7 +149,7 @@ html {
     font-size: 0.8rem;
     opacity: 0.8;
     text-transform: capitalize;
-    color: var(--cyan-aqua);
+    color: var(--primary-beige);
 }
 
 .logout-btn {
@@ -188,7 +181,7 @@ html {
 
 .nav-toggle:hover {
     transform: rotate(90deg);
-    color: var(--cyan-aqua);
+    color: var(--primary-beige);
 }
 
 /* Main Content */
@@ -196,7 +189,7 @@ html {
     margin-top: 70px;
     min-height: calc(100vh - 70px);
     padding: 20px;
-    background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
+    background: linear-gradient(to bottom, var(--primary-blue), var(--primary-red));
 }
 
 /* Auth Section */
@@ -205,7 +198,7 @@ html {
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 70px);
-    background: linear-gradient(135deg, var(--electric-purple) 0%, var(--electric-purple-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
     animation: gradientPulse 15s ease infinite;
     background-size: 200% 200%;
 }
@@ -294,7 +287,7 @@ html {
 }
 
 .tab-btn.active {
-    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-pink-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-red) 100%);
     color: white;
     opacity: 1;
     text-shadow: 0 0 10px rgba(255, 45, 170, 0.7);
@@ -343,7 +336,7 @@ html {
     left: 0;
     width: 50px;
     height: 3px;
-    background: linear-gradient(to right, var(--neon-pink), var(--cyan-aqua));
+    background: linear-gradient(to right, var(--primary-orange), var(--primary-beige));
     border-radius: 3px;
 }
 
@@ -388,7 +381,7 @@ html {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--cyan-aqua);
+    border-color: var(--primary-beige);
     box-shadow: 0 0 0 3px rgba(0, 255, 213, 0.2);
     background: rgba(0, 255, 213, 0.05);
 }
@@ -459,7 +452,7 @@ html {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-pink-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-red) 100%);
     color: white;
     box-shadow: 0 4px 15px rgba(255, 45, 170, 0.4);
 }
@@ -477,7 +470,7 @@ html {
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, var(--bright-orange) 0%, var(--bright-orange-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-orange) 100%);
     color: white;
     box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
 }
@@ -488,7 +481,7 @@ html {
 }
 
 .btn-success {
-    background: linear-gradient(135deg, var(--lime-green) 0%, var(--lime-green-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-beige) 0%, var(--primary-yellow) 100%);
     color: var(--text-dark);
     box-shadow: 0 4px 15px rgba(163, 255, 0, 0.3);
 }
@@ -499,7 +492,7 @@ html {
 }
 
 .btn-warning {
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-orange) 100%);
     color: var(--text-dark);
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
@@ -510,7 +503,7 @@ html {
 }
 
 .btn-danger {
-    background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-orange) 100%);
     color: white;
     box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
 }
@@ -549,7 +542,7 @@ html {
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    border-color: var(--cyan-aqua);
+    border-color: var(--primary-beige);
 }
 
 .stat-icon {
@@ -561,7 +554,7 @@ html {
     justify-content: center;
     font-size: 1.5rem;
     color: white;
-    background: linear-gradient(135deg, var(--electric-purple) 0%, var(--neon-pink) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
     box-shadow: 0 4px 15px rgba(160, 32, 240, 0.4);
     transition: transform 0.5s ease;
 }
@@ -574,7 +567,7 @@ html {
     font-size: 2rem;
     margin-bottom: 5px;
     color: var(--text-light);
-    background: linear-gradient(to right, var(--neon-pink), var(--cyan-aqua));
+    background: linear-gradient(to right, var(--primary-orange), var(--primary-beige));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -609,7 +602,7 @@ html {
 .ticket-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    border-left-color: var(--cyan-aqua);
+    border-left-color: var(--primary-beige);
 }
 
 .ticket-header {
@@ -629,7 +622,7 @@ html {
 }
 
 .ticket-card:hover .ticket-title {
-    color: var(--cyan-aqua);
+    color: var(--primary-beige);
 }
 
 .ticket-id {
@@ -709,7 +702,7 @@ html {
 
 .faq-search input:focus {
     outline: none;
-    border-color: var(--cyan-aqua);
+    border-color: var(--primary-beige);
     box-shadow: 0 0 0 3px rgba(0, 255, 213, 0.2);
 }
 
@@ -742,8 +735,8 @@ html {
 
 .category-btn.active,
 .category-btn:hover {
-    border-color: var(--neon-pink);
-    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-pink-dark) 100%);
+    border-color: var(--primary-orange);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-red) 100%);
     color: white;
     box-shadow: 0 4px 15px rgba(255, 45, 170, 0.3);
 }
@@ -777,7 +770,7 @@ html {
 
 .faq-question:hover {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--cyan-aqua);
+    color: var(--primary-beige);
 }
 
 .faq-question::after {
@@ -820,7 +813,7 @@ html {
 }
 
 .modal-content {
-    background-color: var(--dark-bg);
+    background-color: var(--primary-blue);
     margin: 5% auto;
     padding: 0;
     border-radius: 15px;
@@ -857,7 +850,7 @@ html {
 .modal-header h3 {
     margin: 0;
     color: var(--text-light);
-    background: linear-gradient(to right, var(--neon-pink), var(--cyan-aqua));
+    background: linear-gradient(to right, var(--primary-orange), var(--primary-beige));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -875,7 +868,7 @@ html {
 
 .close:hover {
     opacity: 1;
-    color: var(--neon-pink);
+    color: var(--primary-orange);
     transform: rotate(90deg);
 }
 
@@ -889,7 +882,7 @@ html {
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 15px;
-    border-left: 4px solid var(--neon-pink);
+    border-left: 4px solid var(--primary-orange);
     transition: all var(--transition-speed) var(--transition-easing);
 }
 
@@ -910,7 +903,7 @@ html {
 
 .response-author {
     font-weight: 600;
-    color: var(--cyan-aqua);
+    color: var(--primary-beige);
 }
 
 .response-message {
@@ -937,7 +930,7 @@ html {
     width: 50px;
     height: 50px;
     border: 4px solid rgba(255, 255, 255, 0.1);
-    border-top: 4px solid var(--neon-pink);
+    border-top: 4px solid var(--primary-orange);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     position: relative;
@@ -951,7 +944,7 @@ html {
     right: -4px;
     bottom: -4px;
     border: 4px solid transparent;
-    border-top: 4px solid var(--cyan-aqua);
+    border-top: 4px solid var(--primary-beige);
     border-radius: 50%;
     animation: spinReverse 1.5s linear infinite;
 }
@@ -978,7 +971,7 @@ html {
 }
 
 .toast {
-    background: var(--dark-bg);
+    background: var(--primary-blue);
     border-radius: 8px;
     padding: 15px 20px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
@@ -987,7 +980,7 @@ html {
     gap: 12px;
     min-width: 300px;
     animation: slideIn 0.3s ease;
-    border-left: 4px solid var(--lime-green);
+    border-left: 4px solid var(--primary-beige);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all var(--transition-speed) var(--transition-easing);
@@ -999,15 +992,15 @@ html {
 }
 
 .toast.error {
-    border-left-color: #ff416c;
+    border-left-color: var(--primary-red);
 }
 
 .toast.warning {
-    border-left-color: #FFD700;
+    border-left-color: var(--primary-yellow);
 }
 
 .toast.info {
-    border-left-color: var(--cyan-aqua);
+    border-left-color: var(--primary-beige);
 }
 
 .toast i {
@@ -1015,19 +1008,19 @@ html {
 }
 
 .toast.success i {
-    color: var(--lime-green);
+    color: var(--primary-beige);
 }
 
 .toast.error i {
-    color: #ff416c;
+    color: var(--primary-red);
 }
 
 .toast.warning i {
-    color: #FFD700;
+    color: var(--primary-yellow);
 }
 
 .toast.info i {
-    color: var(--cyan-aqua);
+    color: var(--primary-beige);
 }
 
 .toast-message {
@@ -1060,9 +1053,9 @@ html {
 
 .pagination button:hover,
 .pagination button.active {
-    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-pink-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-red) 100%);
     color: white;
-    border-color: var(--neon-pink);
+    border-color: var(--primary-orange);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(255, 45, 170, 0.3);
 }
@@ -1082,7 +1075,7 @@ html {
         top: 100%;
         left: 0;
         right: 0;
-        background: linear-gradient(135deg, var(--electric-purple) 0%, var(--electric-purple-dark) 100%);
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
         flex-direction: column;
         padding: 20px;
         gap: 10px;
@@ -1182,12 +1175,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(var(--neon-pink), var(--electric-purple));
+    background: linear-gradient(var(--primary-orange), var(--primary-red));
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(var(--neon-pink-dark), var(--electric-purple-dark));
+    background: linear-gradient(var(--primary-red), var(--primary-orange));
 }
 
 /* Hover effects for all interactive elements */
@@ -1197,7 +1190,7 @@ a, button, input[type="button"], input[type="submit"], .btn, .nav-link, .tab-btn
 
 /* Focus states for accessibility */
 a:focus, button:focus, input:focus, select:focus, textarea:focus {
-    outline: 2px solid var(--cyan-aqua);
+    outline: 2px solid var(--primary-beige);
     outline-offset: 2px;
 }
 
@@ -1223,7 +1216,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: var(--dark-bg);
+    background-color: var(--primary-blue);
     color: var(--text-light);
     text-align: center;
     border-radius: 6px;
@@ -1268,7 +1261,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 /* WhatsApp Trigger Form Styles */
 #whatsapp-trigger {
-    background: linear-gradient(135deg, var(--electric-purple-dark) 0%, var(--neon-pink) 100%);
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-orange) 100%);
     color: var(--text-light);
     border-radius: 16px;
     box-shadow: 0 4px 24px rgba(160, 32, 240, 0.15);
@@ -1280,14 +1273,14 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 }
 #whatsapp-trigger h3 {
     margin-bottom: 18px;
-    color: var(--cyan-aqua);
+    color: var(--primary-beige);
     text-shadow: 0 0 8px rgba(0,255,213,0.3);
 }
 #whatsappForm label {
     display: block;
     margin-bottom: 6px;
     font-weight: 500;
-    color: var(--lime-green);
+    color: var(--primary-beige);
     text-align: left;
 }
 #whatsappForm input[type="text"] {
@@ -1296,19 +1289,19 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     margin-bottom: 16px;
     border: none;
     border-radius: 8px;
-    background: var(--darker-bg);
+    background: var(--primary-blue);
     color: var(--text-light);
     font-size: 1rem;
     box-shadow: 0 2px 8px rgba(0,255,213,0.08);
     transition: background 0.3s, box-shadow 0.3s;
 }
 #whatsappForm input[type="text"]:focus {
-    background: var(--dark-bg);
-    outline: 2px solid var(--cyan-aqua);
-    box-shadow: 0 0 0 2px var(--cyan-aqua);
+    background: var(--primary-blue);
+    outline: 2px solid var(--primary-beige);
+    box-shadow: 0 0 0 2px var(--primary-beige);
 }
 #whatsappForm button[type="submit"] {
-    background: var(--lime-green-dark);
+    background: var(--primary-beige);
     color: var(--text-dark);
     border: none;
     border-radius: 8px;
@@ -1320,7 +1313,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 #whatsappForm button[type="submit"]:hover {
-    background: var(--neon-pink);
+    background: var(--primary-orange);
     color: var(--text-light);
     box-shadow: 0 4px 16px rgba(255,45,170,0.18);
 }
@@ -1328,7 +1321,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     margin-top: 16px;
     font-size: 1rem;
     min-height: 24px;
-    color: var(--bright-orange);
+    color: var(--primary-yellow);
     text-shadow: 0 0 6px rgba(255,165,0,0.12);
 }
 
